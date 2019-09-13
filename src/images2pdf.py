@@ -14,5 +14,6 @@ with open(output_file, "wb") as f:
     for file in os.listdir(directory):
         filename = os.fsdecode(file)
         if filename.endswith(".jpg"):
+            print("Adding " + filename)
             fullname = os.path.join(directory, filename)
             f.write(img2pdf.convert(fullname, layout_fun=layout_fun))
